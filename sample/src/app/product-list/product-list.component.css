@@ -1,0 +1,15 @@
+.main{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+img{
+    width: 50px;
+    margin: 2px;
+    display: block;
+    margin: auto;
+}
+tr>th:first-child{
+    text-align: center;
+    align-items: center;
+}

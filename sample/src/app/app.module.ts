@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { StarComponent } from './star/star.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ConvertCharacterPipe } from './pipes/convert-character.pipe';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ProductListComponent,
     StarComponent,
     ProductDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ConvertCharacterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
