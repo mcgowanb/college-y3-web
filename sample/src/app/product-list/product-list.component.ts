@@ -1,3 +1,4 @@
+import { log } from 'util';
 import { DataService } from '../../providers/data.service';
 import { forEach } from '@angular/router/src/utils/collection';
 import { IProduct } from './IProduct';
@@ -57,6 +58,10 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ratingAction(message: string){
+    console.log(message)
   }
 
 }

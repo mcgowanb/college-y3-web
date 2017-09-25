@@ -39,7 +39,7 @@
           <td>{{p.productCode | convertCharacter:'-':' '}}</td>
           <td>{{p.releaseDate}}</td>
           <td>{{p.price | currency:'EUR':true:'1.2-2' }}</td>
-          <td>{{p.starRating}}</td>
+          <td><star class="rating" [rating]="p.starRating" (ratingClicked)="ratingAction($event)"></star></td> 
         </tr>
       </tbody>
     </table>

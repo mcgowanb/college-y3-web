@@ -13,3 +13,6 @@ tr>th:first-child{
     text-align: center;
     align-items: center;
 }
+.rating{
+    color: #ffd700;
+}
