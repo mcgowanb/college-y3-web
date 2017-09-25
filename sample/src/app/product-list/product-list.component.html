@@ -34,7 +34,7 @@
         <tr *ngFor="let p of filteredProducts">
           <td><img src={{p.imageUrl}} *ngIf="showImages" title="{{p.productName | uppercase}}"></td>
           <td>{{p.productName}}</td>
-          <td>{{p.productCode}}</td>
+          <td>{{p.productCode | convertCharacter:'-':' '}}</td>
           <td>{{p.releaseDate}}</td>
           <td>{{p.price | currency:'EUR':true:'1.2-2' }}</td>
           <td>{{p.starRating}}</td>
