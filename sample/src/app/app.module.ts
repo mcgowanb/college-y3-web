@@ -1,3 +1,5 @@
+import {HttpModule} from '@angular/http';
+import { DataService } from '../providers/data.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,7 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { StarComponent } from './star/star.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ConvertCharacterPipe } from './pipes/convert-character.pipe';
+import { ConvertCharacterPipe } from '../pipes/convert-character.pipe';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { ConvertCharacterPipe } from './pipes/convert-character.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
