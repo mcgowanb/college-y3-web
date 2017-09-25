@@ -1,38 +1,45 @@
-<div class='panel panel-primary'>
+<div class='main panel panel-primary'>
   <div class='panel-heading'>
+    <h2>{{pageTitle}}</h2>
   </div>
   <div class='panel-body'>
     <div class='row'>
       <div class='col-md-2'>Filter by:</div>
       <div class='col-md-4'>
-        <input type='text' />
+        <input type='text' [(ngModel)]="searchString"/>
       </div>
     </div>
     <div class='row'>
       <div class='col-md-6'>
-        <h3>Filtered by: </h3>
+        <h3>Filtered by: {{searchString}} </h3>
       </div>
     </div>
-    <div class='table-responsive'>
-      <table class='table'>
-        <thead>
-          <tr>
-            <th>
-              <button class='btn btn-primary'>
-                              Show Image
-                          </button>
-            </th>
-            <th>Product</th>
-            <th>Code</th>
-            <th>Available</th>
-            <th>Price</th>
-            <th>5 Star Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+    <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="filteredProducts.length == 0">
+      <strong>No results found that match the phrase {{searchString}}</strong>
     </div>
+    <table class='table table-hover' *ngIf="filteredProducts && filteredProducts.length">
+      <thead>
+        <tr>
+          <th>
+            <button class='btn btn-primary btn-xs' (click)="showImages = !showImages">Show Image</button>
+          </th>
+          <th>Product</th>
+          <th>Code</th>
+          <th>Available</th>
+          <th>Price</th>
+          <th>5 Star Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of filteredProducts">
+          <td><img src={{p.imageUrl}} *ngIf="showImages" title="{{p.productName | uppercase}}"></td>
+          <td>{{p.productName}}</td>
+          <td>{{p.productCode}}</td>
+          <td>{{p.releaseDate}}</td>
+          <td>{{p.price | currency:'EUR':true:'1.2-2' }}</td>
+          <td>{{p.starRating}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
