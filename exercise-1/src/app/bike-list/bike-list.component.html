@@ -1,0 +1,60 @@
+<div class='main panel panel-primary'>
+  <div class='panel-heading'>
+    <h2>{{pageTitle}}</h2>
+  </div>
+  <div class='panel-body'>
+    <div class='row'>
+      <div class='col-md-4 form-group form-inline'>
+        <div class="input-group">
+          Filter By:     
+          <div class="checkbox">
+            <label>
+              Men <input type="checkbox" [(ngModel)]="showMens">
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              Women <input type="checkbox" [(ngModel)]="showWomen">
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              Kids <input type="checkbox" [(ngModel)]="showKids">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="filteredBikes.length == 0">
+      <strong>No results found</strong>
+    </div>
+    <table class='table table-hover' *ngIf="filteredBikes && filteredBikes.length">
+      <thead>
+        <tr>
+          <th>
+            <button class='btn btn-primary btn-xs' (click)="showImages = !showImages">{{buttonTitle}} Images</button>
+          </th>
+          <th>Product</th>
+          <th>Code</th>
+          <th>Available</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>5 Star Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of filteredBikes">
+          <td><img src={{b.imageUrl}} *ngIf="showImages" title="{{b.bikeName | uppercase}}"></td>
+          <td>{{b.bikeName}}</td>
+          <td>{{b.bikeCode | convertCharacter:'-':' '}}</td>
+          <td>{{b.releaseDate}}</td>
+          <td>{{b.category}}</td>
+          <td>{{b.price | currency:'EUR':true:'1.2-2' }}</td>
+          <td>
+            <star-rating class="rating" [rating]="b.starRating"></star-rating>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

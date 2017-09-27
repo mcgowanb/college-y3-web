@@ -1,0 +1,20 @@
+img{
+    width: 50px;
+    margin: 2px;
+    display: block;
+    margin: auto;
+}
+tr>th:first-child{
+    text-align: center;
+    align-items: center;
+}
+.rating{
+    color: #ffd700;
+}
+
+.checkbox{
+    padding-right: 5px;
+}
+.checkbox:first-of-type{
+    margin-left: 10px;
+}
