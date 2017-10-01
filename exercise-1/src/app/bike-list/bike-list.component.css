@@ -13,7 +13,7 @@ tr>th:first-child{
 }
 
 .checkbox{
-    padding-right: 5px;
+    padding-right: 15px;
 }
 .checkbox:first-of-type{
     margin-left: 10px;
