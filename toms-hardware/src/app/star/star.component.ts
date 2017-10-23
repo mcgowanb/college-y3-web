@@ -2,19 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'star',
-  template: `
-  <div class="crop" 
-  [style.width.px]="starWidth"
-  [title]="rating"
-  (click)="onClick()">
-  <div style="width: 86px">
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="glyphicon glyphicon-star"></span>
-  </div>
-</div>`,
+  templateUrl: './star.component.html',
   styleUrls: ['./star.component.css']
 })
 export class StarComponent implements OnInit {
@@ -23,12 +11,10 @@ export class StarComponent implements OnInit {
   @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
   starWidth: number;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
-
-  ngOnChanges(): void {
+  
+  ngOnInit() {
     this.starWidth = this.rating * 86 / 5;
   }
 

@@ -22,9 +22,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private _dataService: DataService) {
     this.products = this.filteredProducts = [];
-    this._dataService.getProductsList().subscribe(results => {
-      this.products = this.filteredProducts = results;
-    });
+   
   }
 
   get searchString() {
@@ -58,9 +56,12 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._dataService.getProductsList().subscribe((results: IProduct[]) => {
+      this.products = this.filteredProducts = results;
+    }); 
   }
 
-  ratingAction(message: string){
+  ratingClick(message: string){
     console.log(message)
   }
 
