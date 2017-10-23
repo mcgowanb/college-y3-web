@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/mongoose": "^4.7.23",
+    "@types/mongoose": "^4.7.24",
     "@types/node": "^8.0.44",
     "express": "^4.16.2",
     "nodemon": "^1.12.1"

@@ -2,11 +2,14 @@ module.exports = function (app) {
     var productsList = require('../controllers/productListController');
 
     app.route('/products')
-        .get(productsList.list_all_products)
-        .post(productsList.create_a_product);
+        .get(productsList.listAll)
+        .post(productsList.create);
 
-    app.route('/products/:productID')
-        .get(productsList.read_a_product)
-        .put(productsList.update_a_product)
-        .delete(productsList / delete_a_product);
+    app.route('/products/:productId')
+        .get(productsList.read)
+        .put(productsList.update)
+        .delete(productsList.delete);
+
+        app.route('/products/name/like/:query')
+        .get(productsList.search)
 }

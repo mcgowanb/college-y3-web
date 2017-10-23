@@ -12,7 +12,9 @@ const cors = require('cors');
 app.use(cors());
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Productdb');
+mongoose.connect('mongodb://localhost/Productdb', {
+    useMongoClient: true
+});
 
 app.use(bodyParser.urlencoded({ exteded: true }));
 app.use(bodyParser.json());

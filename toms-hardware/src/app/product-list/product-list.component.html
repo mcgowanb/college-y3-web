@@ -38,7 +38,7 @@
           <td><img src={{p.imageUrl}} *ngIf="showImages" title="{{p.productName | uppercase}}"></td>
           <td>{{p.productName}}</td>
           <td>{{p.productCode | convertCharacter:'-':' '}}</td>
-          <td>{{p.releaseDate}}</td>
+          <td>{{p.releaseDate | date:'dd/MM/yyyy'}}</td>
           <td>{{p.price | currency:'EUR':true:'1.2-2' }}</td>
           <td><star class="rating" [rating]="p.starRating" (ratingClicked)="ratingClick($event)"></star></td> 
         </tr>

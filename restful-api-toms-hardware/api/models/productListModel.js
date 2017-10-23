@@ -39,3 +39,5 @@ var ProductSchema = new Schema({
         default: 'URL'
     }
 })
+
+module.exports = mongoose.model('Products', ProductSchema)
