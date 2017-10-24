@@ -22,9 +22,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(private _dataService: DataService) {
     this.products = this.filteredProducts = [];
-    this._dataService.getProductsList().subscribe(results => {
-      this.products = this.filteredProducts = results;
-    });
+
   }
 
   get searchString() {
@@ -33,7 +31,22 @@ export class ProductListComponent implements OnInit {
 
   set searchString(value) {
     this._searchString = value;
-    this.filterList();
+    if (this._searchString.length == 0)
+      this.loadAllItems();
+    else this.filterItems(value);
+  }
+
+
+  filterItems(query: string) {
+    this._dataService.searchProducts(query).subscribe((results: IProduct[]) => {
+      this.products = this.filteredProducts = results;
+    })
+  }
+
+  loadAllItems() {
+    this._dataService.getProductsList().subscribe((results: IProduct[]) => {
+      this.products = this.filteredProducts = results;
+    });
   }
 
   get showImages() {
@@ -51,16 +64,11 @@ export class ProductListComponent implements OnInit {
     else this.buttonTitle = "Show";
   }
 
-  filterList() {
-    this.filteredProducts = _.filter(this.products, (p: IProduct) => {
-      return p.productName.toLocaleLowerCase().includes(this.searchString.toLocaleLowerCase());
-    })
-  }
-
   ngOnInit() {
+    this.loadAllItems();
   }
 
-  ratingAction(message: string){
+  ratingClick(message: string) {
     console.log(message)
   }
 
