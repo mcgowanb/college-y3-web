@@ -48,11 +48,10 @@ exports.update = (req, res) => {
 }
 
 exports.delete = (req, res) => {
-    res.send("ok");
-
-    // Product.save({}, (err, res) => {
-    //     if (err)
-    //         res.send(err)
-    //     res.send("ok");
-    // })
+    Product.remove({ _id: req.params.id }, (err, _) => {
+        if (err) return res.send(err)
+        res.json({
+            message: `deleted ${req.params.id}`
+        })
+    })
 }
