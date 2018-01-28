@@ -1,0 +1,82 @@
+[
+    {
+        "productId": 2,
+        "productName": "Garden Cart",
+        "productCode": "GDN-0023",
+        "releaseDate": "March 18, 2016",
+        "description": "15 callon capacity rolling garden cart",
+        "price": 32.99,
+        "starRating": 4.2,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    },
+    {
+        "productId": 5,
+        "productName": "Hammer",
+        "productCode": "TBX-0048",
+        "releaseDate": "May 21, 2016",
+        "description": "Curved steel claw hammer",
+        "price": 8.99,
+        "starRating": 4.8,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejoin_Hammer.png"
+    },
+    {
+        "productId": 2,
+        "productName": "Snow Shovel",
+        "productCode": "SHV-0091",
+        "releaseDate": "March 18, 2017",
+        "description": "Useful for shoveling snow when its snowey",
+        "price": 24.99,
+        "starRating": 4.5,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/213328/cyberscooty-snow_shovel.png"
+    },
+    {
+        "productId": 5,
+        "productName": "Axe",
+        "productCode": "AXE-0100",
+        "releaseDate": "Jan 21, 2016",
+        "description": "Steel and wood axe, for all your axing needs",
+        "price": 12.99,
+        "starRating": 3.8,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/168599/Fireaxe.png"
+    },
+    {
+        "productId": 2,
+        "productName": "Lawn Mower",
+        "productCode": "LWN-0147",
+        "releaseDate": "March 18, 2016",
+        "description": "Great for keeping your lawn mown",
+        "price": 232.99,
+        "starRating": 3.9,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/284964/lawnmower.png"
+    },
+    {
+        "productId": 5,
+        "productName": "Watering Can",
+        "productCode": "WAT-001",
+        "releaseDate": "May 21, 2016",
+        "description": "15 L Watering can for waterin stuff",
+        "price": 8.99,
+        "starRating": 4.8,
+        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/203249/watering-can.png"
+    },
+    {
+        "productId": 8,
+        "productName": "Saw",
+        "productCode": "TBX-0022",
+        "releaseDate": "May 15, 2016",
+        "description": "15-inch steel blade hand saw",
+        "price": 11.55,
+        "starRating": 3.7,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+    },
+    {
+        "productId": 10,
+        "productName": "Video Game Controller",
+        "productCode": "GMG-0042",
+        "releaseDate": "October 15, 2015",
+        "description": "Standard two-button video game controller",
+        "price": 35.95,
+        "starRating": 4.6,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    }
+]
