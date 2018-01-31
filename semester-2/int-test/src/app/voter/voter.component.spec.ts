@@ -34,8 +34,8 @@ describe('VoterComponent', () => {
 
   it('should call upvote if I click on the up vote buton', () => {
     let btn = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
-    let spy = spyOn(component, 'upVote').and.stub();
     btn.triggerEventHandler('click', null);
+    let spy = spyOn(component, 'upVote').and.stub();
     expect(spy).toHaveBeenCalled();
   })
 });
